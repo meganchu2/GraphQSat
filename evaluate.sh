@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-python3 evaluate.py \
+python3 evaluateV2.py \
   --logdir ./log \
   --env-name sat-v0 \
   --core-steps -1 \
@@ -20,6 +20,7 @@ python3 evaluate.py \
   --eval-time-limit 100000000000000 \
   --no_restarts \
   --test_time_max_decisions_allowed 500 \
-  --eval-problems-paths PATH_TO_EVAL_DATA \
-  --model-dir MODEL_DIR \
-  --model-checkpoint CHECKPOINT.chkp
+  --eval-problems-paths ./data/uf250-1065/test \
+  --model-dir ./runs/uf20-91-1/ \
+  --model-checkpoint model_10000.chkp \
+  >> ./data/uf250-1065/uf250-1065-gqsat-train1.tsv

@@ -1,0 +1,11 @@
+sec to solve	episode #	score
+
+Minisat iters:	3960 
+Gqsat iters:	3391 
+Minisat iters/gqsat iters:	1.17
+total_eval_time	32.82978415489197
+Results for	./data/uf50-218/test
+median_relative_score:	1.2307692307692308
+mean_relative_score:	1.7175607866739488
+min_score:	0.140625
+max_score:	17.857142857142858

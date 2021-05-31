@@ -1,0 +1,11 @@
+sec to solve	episode #	score
+
+Minisat iters:	28923 
+Gqsat iters:	35974 
+Minisat iters/gqsat iters:	0.80
+total_eval_time	604.3892130851746
+Results for	./data/uf100-430/test
+median_relative_score:	0.751569410278125
+mean_relative_score:	1.503113422394167
+min_score:	0.07523510971786834
+max_score:	8.528301886792454

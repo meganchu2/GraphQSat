@@ -1,0 +1,11 @@
+sec to solve	episode #	score
+
+Minisat iters:	16525400 
+Gqsat iters:	5857987 
+Minisat iters/gqsat iters:	2.82
+total_eval_time	2221.2446813583374
+Results for	./data/uf250-1065/test
+median_relative_score:	1.1818090739754257
+mean_relative_score:	2.4181513692667793
+min_score:	0.016396491336825466
+max_score:	25.55665024630542

@@ -217,7 +217,7 @@ class gym_sat_Env(gym.Env):
         self.step_ctr = 0
 
         if max_decisions_cap is None:
-            max_decisions_cap = sys.maxsize
+            max_decisions_cap = 2**31 - 1#sys.maxsize
         self.max_decisions_cap = max_decisions_cap
         self.curr_problem = self.random_pick_satProb()
         self.S = GymSolver(self.curr_problem, self.with_restarts, max_decisions_cap)

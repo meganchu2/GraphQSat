@@ -15,8 +15,8 @@
 python3 dqn.py \
   --logdir ./log \
   --env-name sat-v0 \
-  --train-problems-paths ./data/uf50-218-tvt/train \
-  --eval-problems-paths ./data/uf50-218-tvt/validation \
+  --train-problems-paths ./data/uf20-91/train1Problem \
+  --eval-problems-paths ./data/uf20-91/validation \
   --lr 0.00002 \
   --bsize 64 \
   --buffer-size 20000 \

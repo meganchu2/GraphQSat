@@ -470,7 +470,8 @@ def evaluate(agent, args, include_train_set=False):
     res = {}
 
     st_time = time.time()
-    print("Starting evaluation. Fasten your seat belts!")
+    #print("Starting evaluation. Fasten your seat belts!")
+    print("sec to solve\tepisode #\tscore")
 
     total_iters_ours = 0
     total_iters_minisat = 0
@@ -500,12 +501,14 @@ def evaluate(agent, args, include_train_set=False):
                     obs, _, done, _ = eval_env.step(action)
 
                 walltime[eval_env.curr_problem] = time.time() - p_st_time
-                print(
-                    f"It took {walltime[eval_env.curr_problem]} seconds to solve a problem."
-                )
+                #print(
+                #    f"It took {walltime[eval_env.curr_problem]} seconds to solve a problem."
+                #)
+                ##print(f"{walltime[eval_env.curr_problem]}",end="\t")
                 sctr = 1 if eval_env.step_ctr == 0 else eval_env.step_ctr
                 ns = eval_env.normalized_score(sctr, eval_env.curr_problem)
-                print(f"Evaluation episode {pr+1} is over. Your score is {ns}.")
+                #print(f"Evaluation episode {pr+1} is over. Your score is {ns}.")
+                ##print(f"{pr+1}\t{ns}")
                 total_iters_ours += sctr
                 pdir, pname = os.path.split(eval_env.curr_problem)
                 total_iters_minisat += eval_env.metadata[pdir][pname][1]
@@ -513,10 +516,15 @@ def evaluate(agent, args, include_train_set=False):
                 pr += 1
                 if DEBUG_ROLLOUTS is not None and pr >= DEBUG_ROLLOUTS:
                     break
+        # print(
+            # f"Evaluation is done. Median relative score: {np.nanmedian([el for el in scores.values()]):.2f}, "
+            # f"mean relative score: {np.mean([el for el in scores.values()]):.2f}, "
+            # f"iters frac: {total_iters_minisat/total_iters_ours:.2f}"
+        # )
         print(
-            f"Evaluation is done. Median relative score: {np.nanmedian([el for el in scores.values()]):.2f}, "
-            f"mean relative score: {np.mean([el for el in scores.values()]):.2f}, "
-            f"iters frac: {total_iters_minisat/total_iters_ours:.2f}"
+            f"\nMinisat iters:\t{total_iters_minisat} "
+            f"\nGqsat iters:\t{total_iters_ours} "
+            f"\nMinisat iters/gqsat iters:\t{total_iters_minisat/total_iters_ours:.2f}"
         )
         res[pset] = scores
 
