@@ -2,14 +2,25 @@
 
 Can Q-learning with Graph Networks learn a Generalizable Branching Heuristic for a SAT solver?
 
-* I will first go over the commands used to install all the necessary modules. 
 
-* Then I will go over how to train and test using GQSAT, and changes I made to the original code for my experiments. 
+## Setting up UBUNTU
+You will need to run everything in an ubuntu terminal. If you have Windows 10, I recommend using Windows Subsystem for Linux https://ubuntu.com/wsl
 
-* Lastly, I will describe what is included in some of the files I added to the repo.
+## Getting repo
+You can either clone this repo or download the files and work locally.
 
+## Installing Required Packages
+``Dockerfile`` provided in the original code shows the modules that need to be installed. For me, this is the series of commands I used to install the required packages.
 
-PLEASE RUN EVERYTHING ON UBUNTU!!
+```
+sudo apt install python3-pip
+python3 -m pip install numpy
+pip3 install torch torchvision torchaudio
+pip install gym
+pip3 install torch-scatter
+pip install torch-geometric
+pip install torch-sparse
+```
 
 ## How to add metadata for evaluation
 This will add a METADATA file that is necessary for your validation problems in training and your testing problems when testing
@@ -58,23 +69,6 @@ To make working with the data easier, you may want to pipe the output of evaluat
 * ``evaluateV2.py`` is a variation of the original ``evaluate.py`` with slightly different print statements to fit what I wanted for my experiments.
 
 
-## Individual Contributor License Agreement
-
-Please fill out the following CLA and email to sgodil@nvidia.com:  https://www.apache.org/licenses/icla.pdf
-
-## Cite
-
-```
-@inproceedings{kurin2019improving,
-  title={Can Q-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?},
-  author={Kurin, Vitaly and Godil, Saad and Whiteson, Shimon and Catanzaro, Bryan},
-  booktitle = {Advances in Neural Information Processing Systems 32},
-  year={2020}
-}
-```
-
 ## Acknowledgements
 
-We would like to thank [Fei Wang](https://github.com/feiwang3311/minisat) whose initial implementation of the environment we used as a start, and the creators of [Minisat](https://github.com/niklasso/minisat) on which it is based on.
-We would also like to thank the creators of [Pytorch Geometric](https://github.com/rusty1s/pytorch_geometric) whose 
-MetaLayer and [Graph Nets](https://arxiv.org/abs/1806.01261) implementation we built upon. 
+Here is the link to the original code https://github.com/NVIDIA/GraphQSat 
