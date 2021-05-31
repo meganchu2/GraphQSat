@@ -69,7 +69,7 @@ To make working with the data easier, you may want to pipe the output of evaluat
 * ``evaluateV2.py`` is a variation of the original ``evaluate.py`` with slightly different print statements to fit what I wanted for my experiments.
 
 ## How plots were generated
-We generated plots using Google Sheets. Here is the link to the file https://docs.google.com/spreadsheets/d/1e0TgH0f8kEpV5ZpxRpoYRRJL6Unm36XSqnbpw5BS7Wo/edit?usp=sharing
+I generated plots using Google Sheets. Here is the link to the file https://docs.google.com/spreadsheets/d/1e0TgH0f8kEpV5ZpxRpoYRRJL6Unm36XSqnbpw5BS7Wo/edit?usp=sharing
 
 
 ## Acknowledgements
