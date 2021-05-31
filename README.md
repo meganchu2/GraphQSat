@@ -2,12 +2,27 @@
 
 Can Q-learning with Graph Networks learn a Generalizable Branching Heuristic for a SAT solver?
 
-## How to add metadata for evaluation
+I will first go over the commands used to install all the necessary modules. 
 
+Then I will go over how to train and test using GQSAT, and changes I made to the original code for my experiments. 
+
+Lastly, I will describe what is included in some of the files I added to the repo.
+
+
+PLEASE RUN EVERYTHING ON UBUNTU!!
+
+## How to add metadata for evaluation
+This will add a METADATA file that is necessary for your validation problems in training and your testing problems when testing
+* First download your dataset from https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html
+* Unzip the dataset and partition the ``*/cnf`` files into training, validation, and/or testing folders
+* Run the command below once for your validation folder (if any) and once for your testing folder (if any)
 ```python3 add_metadata.py --eval-problems-paths <path_to_folder_with_cnf>```
 
 ## How to train
-
+This will train GQSAT using your training problems and validate using your validation problems
+* First open train.sh in a text editor
+* Replace the path in ``--train-problems-paths ./data/uf20-91/train1Problem \`` with the path to your training folder
+* Replace the path in ``--eval-problems-paths ./data/uf20-91/validation \`` with the path to your validation folder
 ```./train.sh```
 
 ## How to evaluate 
